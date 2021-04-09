@@ -1,0 +1,88 @@
+<body class="sb-nav-fixed">
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Ksmartech</a>
+    <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+    <!-- Navbar Search-->
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        <div class="input-group">
+            <input class="form-control" type="text" placeholder="사원 검색..." aria-label="Search" aria-describedby="basic-addon2" />
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </form>
+    <!-- Navbar-->
+    <ul class="navbar-nav ml-auto ml-md-0">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">Settings</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="login.html">Logout</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <div class="sb-sidenav-menu">
+                <div class="nav">
+                    <a class="nav-link" href="login.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                        로그인
+                    </a>
+
+                    <div class="sb-sidenav-menu-heading">개인 관리</div>
+                    <a class="nav-link" href="./modifyPersonnel.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        신상 정보 수정
+                    </a>
+
+                    <div class="sb-sidenav-menu-heading">사원 관리</div>
+                    <a class="nav-link" href="#">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        사원 정보 수정
+                    </a>
+
+                    <div class="sb-sidenav-menu-heading">마이페이지</div>
+                    <a class="nav-link" href="./main.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        홈화면
+                    </a>
+
+                    <div class="sb-sidenav-menu-heading">연차</div>
+                    <a class="nav-link" href="./vacationDocument.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        신청서 작성
+                    </a>
+                    <a class="nav-link" href="./userVacation.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        개인 연차 조회
+                    </a>
+                    <a class="nav-link" href="./groupVacation.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        그룹별 연차 조회
+                    </a>
+                    
+
+                    <div class="sb-sidenav-menu-heading">결재</div>
+                    <a class="nav-link" href="./approvalList.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        결재 목록
+                    </a>
+
+
+
+
+                </div>
+            </div>
+            <div class="sb-sidenav-footer">
+                Ksmartech Groupware
+            </div>
+        </nav>
+    </div>
+    <div id="layoutSidenav_content">
+    </div>
+</div>
+</body>

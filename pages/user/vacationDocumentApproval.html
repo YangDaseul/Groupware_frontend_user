@@ -1,0 +1,120 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .vacation-approval td{
+            vertical-align: middle;
+        }
+    </style>
+    </head>
+
+<body>
+    <div class="container-fluid">
+        <br>
+        <h1>휴가 신청 결재</h1>
+        <br>
+
+        <p style="position: relative; left: 940px;">신청일자 : 2021-04-06</p>
+
+        <table class="vacation-approval" style="height: 150%;" width="70%">
+            <tbody>
+                <tr>
+                    <td align="center" , style="background-color: lightgrey;">
+                        <b>신청자</b>
+                    </td>
+                    <td colspan="2" , align="center">양다슬(사원)</td>
+
+                    <td align="center" , style="background-color: lightgrey;">
+                        <b>소속</b>
+                    </td>
+                    <td colspan="2" , align="center">솔루션본부/연구개발1팀</td>
+
+                </tr>
+
+                <tr>
+                    <td align="center" , style="background-color: lightgrey;">
+                        <b>연차정보</b>
+                    </td>
+                    <td colspan="5"> &nbsp;&nbsp;&nbsp;&nbsp;[총 연차일 : 15] &nbsp;&nbsp; [사용일 : 2 ] &nbsp;&nbsp; [잔여일 : 13
+                        ]</td>
+                </tr>
+
+                <tr>
+                    <td align="center" , style="background-color: lightgrey;">
+                        <b>휴가유형</b>
+                    </td>
+                    <td colspan="5">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        연차
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" , style="background-color: lightgrey;">
+                        <b>시작일자</b>
+                    </td>
+                    <td align="center">
+                        2021-04-06
+                    </td>
+
+                    <td align="center" , style="background-color: lightgrey;">
+                        <b>종료일자</b>
+                    </td>
+                    <td align="center">
+                        2021-04-06
+                    </td>
+
+
+                    </td>
+                    <td align="center" , style="background-color: lightgrey;">
+                        <b>기간</b>
+                    </td>
+                    <td align="center"> &nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="center" , style="background-color: lightgrey;">
+                        <b>휴가사유</b>
+                    </td>
+                    <td colspan="5">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <textarea cols="80" rows="3"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" , style="background-color: lightgrey;">
+                        <b>첨부파일</b>
+                    </td>
+                    <td colspan="5">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span style="color:gray" ;>&nbsp;&nbsp; 선택된 파일이 없음 </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" , style="background-color: lightgrey;">
+                        <b>반려사유</b>
+                    </td>
+                    <td colspan="5">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <textarea cols="80" rows="3" placeholder="반려 사유를 입력하시오."></textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+
+
+        <div style="position: relative; left: 30%">
+            <input type="button" name="승인" value="승인">
+            <input type="button" name="반려" value="반려">
+            <input type="button" name="닫기" value="닫기" onclick="history.go(-1)">
+        </div>
+</body>

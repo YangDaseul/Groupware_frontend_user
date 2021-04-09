@@ -1,0 +1,147 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Datepicker - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+    </script>
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            
+        }
+
+        .apply-vacation td{
+            vertical-align: middle;
+        }
+        
+        
+    </style>
+  </head>
+
+<body>
+    <div class="container-fluid">
+        <br>
+        <h1>휴가 신청</h1>
+        <br>
+
+        <table class="apply-vacation" style="height: 150%;" width= "70%">
+            <tbody>
+            <tr>
+            <td style="background-color: lightgrey; text-align:center;">
+                <b>신청자</b>
+            </td>
+            <td colspan="2", align="center">양다슬(사원)</td>
+
+            <td style="background-color: lightgrey; text-align:center;">
+                <b>소속</b>
+            </td>
+            <td colspan="2", align="center">솔루션본부/연구개발1팀</td>
+
+            </tr>
+
+            <tr>
+                <td style="background-color: lightgrey; text-align:center;">
+                    <b>연차정보</b>
+                </td>
+            <td colspan="5"> &nbsp;&nbsp;&nbsp;&nbsp;[총 연차일 :  15] &nbsp;&nbsp; [사용일 :  2  ] &nbsp;&nbsp; [잔여일 :  13  ]</td>
+            </tr>
+
+            <tr>
+                <td style="background-color: lightgrey; text-align:center;">
+                    <b>휴가유형</b>
+                </td>
+                <td colspan="5">
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                        <select name="vacation_category" size="1">
+                            <optgroup label="연차휴가">
+                                <option value="연차">오전반차</option>
+                                <option value="연차">오후반차</option>
+                                <option value="연차">월차</option>
+                                <option value="연차">연차</option>
+                            </group>
+
+                            <optgroup label="경조휴가">
+                                <option value="연차">본인결혼</option>
+                                <option value="연차">자녀결혼</option>
+                                <option value="연차">형제,자매결혼</option>
+                                <option value="연차">본인,배우자 부모 회갑(칠순)</option>
+                                <option value="연차">본인분만</option>
+                                <option value="연차">배우자 분만</option>
+                                <option value="연차">배우자상</option>
+                                <option value="연차">부모,배우자 부모상</option>
+                                <option value="연차">자녀상</option>
+                                <option value="연차">조부모상</option>
+                                <option value="연차">본인 및 배우자의 형제,자매상</option>
+                                <option value="연차">예비군</option>
+                                <option value="연차">병가</option>
+                            </group>
+
+                            <optgroup label="기타">
+                                <option value="연차">기타</option>
+                            </group>
+
+
+                        </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: lightgrey; text-align:center;">
+                    <b>시작일자</b>
+                </td>
+                <td align="center">
+                    <input type="date" id="datepicker">
+ 
+                </td>
+                <td style="background-color: lightgrey; text-align:center;">
+                    <b>종료일자</b>
+                </td>
+                <td align="center">
+                    <input type="date" id="datepicker">
+ 
+                </td>
+                <td style="background-color: lightgrey; text-align:center;">
+                    <b>기간</b>
+                </td>
+                <td align="center"> &nbsp;&nbsp;&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="background-color: lightgrey; text-align:center;">
+                    <b>휴가사유</b>
+                </td>
+                <td colspan="5">
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <textarea cols="80" rows="5" placeholder="미 차감 휴가 사용 시 휴가 사유 입력"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: lightgrey; text-align:center;">
+                    <b>첨부파일</b>
+                </td>
+                <td colspan="5">
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="button" name="fileBtn" value="파일선택">
+                    <span style="color:gray";>&nbsp;&nbsp; 선택된 파일이 없음 </span>
+                </td>
+            </tr>
+            </tbody>
+            </table>
+
+            <br>
+        
+            <div style="position: relative; left: 30%;">
+            <input type="button" name="결재요청" value="결재요청">
+            <input type="button" name="닫기" value="닫기" onclick="history.go(-1)">
+        </div>
+    </div>
+</body>

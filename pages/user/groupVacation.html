@@ -1,0 +1,149 @@
+<head>
+    <style>
+        .vacation_information {
+            width: 80%;
+
+        }
+
+        .group_category {
+            position: relative;
+            top: 5%;
+
+        }
+
+        .view_category {
+            position: relative;
+            left: 70%;
+        }
+
+        .vacation_list {
+            width: 60%;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            $("#button").on("click", function(){
+                $("#vacation_list").show();
+            })
+        })
+
+    </script>
+    <link href="./css/styles.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+    <div class="container-fluid">
+
+        <table class="vacation_information">
+
+            <h1>그룹별 연차 조회</h1>
+            <br>
+
+            <div class="group_category">
+                <select name="group_category" size="1">
+                    <group label="솔루션본부">
+                        <option value="품질개선팀">품질개선팀</option>
+                        <option value="품질지원팀">품질지원팀</option>
+                        <option value="연구기획팀">연구기획팀</option>
+                        <option value="연구개발1팀">연구개발1팀</option>
+                        <option value="연구개발2팀">연구개발2팀</option>
+                        <option value="연구개발3팀">연구개발3팀</option>
+                        <option value="선행개발1팀">선행개발1팀</option>
+                        <option value="선행개발2팀">선행개발2팀</option>
+                    </group>
+
+                </select>
+
+                <select name="group_category" size="1">
+                    <group label="서비스개발본부">
+                        <option value="서비스기획팀">서비스기획팀</option>
+                        <option value="서비스개발팀">서비스개발팀</option>
+                        <option value="서비스운영팀">서비스운영팀</option>
+                        <option value="UI팀">UI팀</option>
+                    </group>
+
+                </select>
+            </div>
+            <br>
+
+            <div class="view_category">
+
+                <select name="view_category" size="1">
+
+                    <option value="테이블 보기">테이블 보기</option>
+                    <option value="캘린더 보기">캘린더 보기</option>
+
+                </select>
+            </div>
+
+
+            <h3>연차 내역</h3>
+
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>직급</th>
+                    <th>총 연차일</th>
+                    <th>사용일</th>
+                    <th>잔여일</th>
+                    <th>상세 조회</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>양다슬</td>
+                    <td>사원</td>
+                    <td>15</td>
+                    <td>5</td>
+                    <td>10</td>
+                    <td>
+                        <button id="button">조회</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+        <div id="vacation_list" style="display: none;">
+            <br><br><br><br>
+
+            <h3>연차 사용 내역</h3>
+
+            <table id="vacation_list">
+
+                <thead>
+
+                    <tr>
+                        <th>번호</th>
+                        <th>휴가유형</th>
+                        <th>사용일</th>
+                        <th>종료일</th>
+                        <th>휴가기간</th>
+                        <th>상태</th>
+                        <th>반려사유</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>연차</td>
+                        <td>2021-04-06</td>
+                        <td>2021-04-06</td>
+                        <td>1</td>
+                        <td>승인</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</body>
+
+
+
+</html>

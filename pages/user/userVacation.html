@@ -1,4 +1,59 @@
+<head>
+    <script>
+        $(function(){
+            axios.get("http://localhost:3000/Employee_vacation")
+        })
+        .then(function(response){
+            let tb = $("<tbody/>");
+            console.log(response)
+            for(var i in response.data){
+                console.log(response.data)
 
+                let $employee_id = response.data[i].employee_id
+                let $total_vacation_number = response.data[i].total_vacation_number
+                let $used_vacation_number = response.data[i].used_vacation_number
+
+                var row = $("<tr/").append(
+                    '<td>' + $total_vacation_number + '</td>' + 
+                    '<td>' + $used_vacation_number + '</td>'
+                )
+                tb.append(row);
+            
+            }
+            $(".thead").after(tb);
+        })
+        .catch(function(error){
+            console.log(error);
+        })
+    
+        postScript = () => {
+        
+            axios.get("http://localhost:3000/Employee_vacation")
+                .then(response => {
+                    var inputs = document.getElementsByClassName("user-vacation");
+                    for(inputs in response.data.data){
+                        response.data.data[0].total_vacation_number;
+                        response.data.data[1].used_vacation_number;
+                    }
+                    new Array().forEach.call(inputs, (element) => {
+                        element.value = response.data.data[element.name];
+                    })
+
+
+                })
+                .catch(error => {
+
+                })
+        }
+
+        
+
+
+
+        window.onload = pageInitialLoadPage("./pages/userVacation.html", postScript);
+
+    </script>
+</head>
 <body>
     <div class="container-fluid">
         <table class="vacation_information">
@@ -10,7 +65,7 @@
             <h3>연차 조회</h3>
             <br>
 
-            <thead>
+            <thead class="thead">
                 <tr>
                     <th>총 연차일</th>
                     <th>사용일</th>
@@ -18,11 +73,13 @@
                 </tr>
             </thead>
 
+            <tbody>
             <tr>
-                <td align="center" , class="user-vacation-input"></td>
-                <td align="center" , class="user-vacation-input"></td>
-                <td align="center" , class="user-vacation-input"></td>
+                <td align="center" , class="user-vacation" name="total_vacation_number"></td>
+                <td align="center" , class="user-vacation" name="used_vacation_number"></td>
+                <td align="center" , class="user-vacation" name="remain_vacation_number"></td>
             </tr>
+        </tbody>
         </table>
 
         <br>
@@ -50,12 +107,12 @@
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td>연차</td>
-                    <td>2021-04-06</td>
-                    <td>2021-04-06</td>
-                    <td>1</td>
-                    <td>승인</td>
-                    <td>-</td>
+                    <td class="user-vacation-information" name="vacation_type_name"></td>
+                    <td class="user-vacation-information" name="vacation_start_date"></td>
+                    <td class="user-vacation-information" name="vacation_end_date"></td>
+                    <td class="user-vacation-information" name="vacation_period"></td>
+                    <td class="user-vacation-information" name="vacation_state"> </td>
+                    <td ></td>
                     <td>
                         <a href="vacationDocumentInformation.html">
                             <input type="button" name="vacationDocumentInform" value="조회">

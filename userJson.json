@@ -1,0 +1,119 @@
+{
+    "Employee_vacation": [ 
+      {
+        "employee_id": 1,
+        "total_vacation_number": 15,
+        "used_vacation_number": 2
+      }
+    ],
+  
+    "Employee_vacation_information": [ 
+      {
+        "vacation_document_id": 1,
+        "employee_id": 1,
+        "vacation_type_id": 3,
+        "vacation_type_name": "연차",
+        "vacation_start_date": "2021-04-06",
+        "vacation_end_date": "2021-04-06",
+        "vacation_period": 1,
+        "vacation_reason": null,
+        "approval_state": "승인"
+      },
+      {
+        "vacation_document_id": 1,
+        "employee_id": 2,
+        "vacation_type_id": 2,
+        "vacation_type_name": "오후반차",
+        "vacation_start_date": "2021-04-06",
+        "vacation_end_date": "2021-04-06",
+        "vacation_period": 0.5,
+        "vacation_reason": null,
+        "approval_state": "승인"
+      },
+      {
+        "vacation_document_id": 1,
+        "employee_id": 3,
+        "vacation_type_id": 1,
+        "vacation_type_name": "오전반차",
+        "vacation_start_date": "2021-12-06",
+        "vacation_end_date": "2021-12-06",
+        "vacation_period": 0.5,
+        "vacation_reason": null,
+        "approval_state": "승인"
+      }
+    ],
+  
+    "Post": [ 
+      {
+        "employee_id": 1,
+        "employee_name": "양다슬",
+        "vacation_apply_date": "2021-04-09",
+        "vacation_type_id": 1,
+        "vacation_type_name": "오전반차",
+        "vacation_start_date": "2021-04-09",
+        "vacation_end_date": "2021-04-09",
+        "vacation_period": 0.5,
+        "vacation_reason": null,
+        "attached_file_check": "1"
+      }
+    ],
+  
+    "Group_vacation": [
+      {
+        "employee_id": 1,
+        "total_vacation_number": 15,
+        "used_vacation_number": 2
+      },
+      {
+        "employee_id": 2,
+        "total_vacation_number": 12,
+        "used_vacation_number": 5
+      },
+      {
+        "employee_id": 3,
+        "total_vacation_number": 13,
+        "used_vacation_number": 6
+      },
+      {
+        "employee_id": 4,
+        "total_vacation_number": 15,
+        "used_vacation_number": 4
+      },
+      {
+        "employee_id": 5,
+        "total_vacation_number": 15,
+        "used_vacation_number": 8
+      }
+    ],
+  
+    "Vacation_document_information": [
+      {
+        "vacation_document_id": 1,
+        "employee_id": 12,
+        "vacation_apply_date": "2021-03-28",
+        "vacation_type_id": "1",
+        "vacation_type_name": "연차",
+        "vacation_start_date": "2021-03-31",
+        "vacation_end_date": "2021-03-31",
+        "vacation_period": 1,
+        "vacation_reason": null,
+        "approval_state": "승인/반려/대기/사용"
+      }
+    ],
+  
+    "Approval_list": [
+      {
+        "vacation_document_id": 1,
+        "employee_id": 12,
+        "vacation_apply_date": "2021-03-28",
+        "vacation_type_id": 1,
+        "vacation_type_name": "연차",
+        "vacation_start_date": "2021-03-31",
+        "vacation_end_date": "2021-03-31",
+        "vacation_period": 1,
+        "vacation_reason": null,
+        "approval_state": "대기"
+      }
+    ]
+  
+  }

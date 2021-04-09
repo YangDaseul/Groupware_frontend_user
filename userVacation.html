@@ -16,30 +16,24 @@
     <script>
         window.onload = pageInitialLoadPage("./pages/user/userVacation.html");
     </script>
-
-    <script>
-        postScript = () => {
-            axios.get("http://localhost:3000/Employee_vacation", {
-                param: {
-                    employee_id: 1
-                }
+<script>
+postScript = () => {
+        
+    axios.get("http://localhost:3000/Employee_vacation")
+        .then(response => {
+            var inputs = document.getElementsByClassName("user-vacation");
+            new Array().forEach.call(inputs, (element) => {
+                element.value = response.data.data[element.name];
             })
-                .then(response => {
-                   
-                    
 
 
+        })
+        .catch(error => {
 
+        })
+}
+</script>
 
-                })
-                .catch(error => {
-
-                })
-        }
-
-        window.onload = pageInitialLoadPage("./pages/userVacation.html", postScript);
-
-    </script>
 </head>
 <body class="sb-nav-fixed">
 </body>

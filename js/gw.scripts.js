@@ -68,12 +68,6 @@ function vacationDocumentApprovalPage(){
     window.location.href= './vacationDocumentApproval.html'
 }
 
-function userVacationInputs(){
-    var inputs = document.getElementsByClassName("user-vacation-input");
-    new Array().forEach.call(inputs, (element) => {
-        element.value = "";
-    })
-}
 
 
 

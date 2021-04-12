@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta charset="UTF-8">
     <title>케이스마텍 그룹웨어</title>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
 
     <link href="./css/styles.css" rel="stylesheet">
     <script src="./js/gw.scripts.js"></script>
@@ -16,25 +19,79 @@
     <script>
         window.onload = pageInitialLoadPage("./pages/user/userVacation.html");
     </script>
-<script>
-postScript = () => {
-        
-    axios.get("http://localhost:3000/Employee_vacation")
-        .then(response => {
-            var inputs = document.getElementsByClassName("user-vacation");
-            new Array().forEach.call(inputs, (element) => {
-                element.value = response.data.data[element.name];
+    <script>
+
+        postScript = () => {
+            axios.get("http://localhost:3000/Leave_all", {
+                params: { employee_code: "2" }
             })
 
+                .then(response => {
+                    var inputs = document.getElementsByClassName("user-vacation");
 
-        })
-        .catch(error => {
+                    new Array().forEach.call(inputs, (element) => {
+                        var result = response.data.data;
 
-        })
-}
-</script>
+                        element.innerHTML = result[0][element.id];
+                        
+                        //console.log(element.id)[0];
+
+                    })
+                })
+                .catch(error => {
+
+                })
+
+
+            axios.get("http://localhost:3000/Employee_vacation_information", {
+                params: {
+                    employee_id: 1
+                }
+            })
+                .then(response => {
+
+                    var inputs = document.getElementsByClassName("user-vacation-information");
+                    var result = response.data.data;
+                    console.log(result.length);
+                    for (var i = 0; i < result.length; i++) {
+
+                        new Array().forEach.call(inputs, (element) => {
+
+                            element.innerHTML = result[i][element.id];
+                            //console.log(result[i][element.id]);
+                            
+                        })
+                        
+                    }
+                    autoIncrement(0);
+
+
+
+                })
+                .catch(error => {
+
+                })
+        }
+
+        window.onload = pageInitialLoadPage("./pages/user/userVacation.html", postScript);
+
+        function autoIncrement(startnum) {
+            var init = startnum;
+            var autoInc = document.getElementsByClassName("user-vacation-information-autoInc"); // 연차 사용 내역 번호 자동 
+
+            for (var i = 0; i < autoInc.length; i++) {
+                init++;
+                autoInc[i].innerHTML = init;
+
+            }
+
+        }
+
+    </script>
 
 </head>
+
 <body class="sb-nav-fixed">
 </body>
+
 </html>

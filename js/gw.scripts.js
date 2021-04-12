@@ -68,6 +68,17 @@ function vacationDocumentApprovalPage(){
     window.location.href= './vacationDocumentApproval.html'
 }
 
+function viewOnChange(){
+    var group = document.getElementById("group_category").options[document.getElementById("group_category").selectedIndex].value;
+    var view = document.getElementById("group_category");
+
+    if(group != null){
+        view.innerHTML = view;
+    }
+
+
+}
+
 
 
 

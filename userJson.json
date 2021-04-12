@@ -3,7 +3,8 @@
       {
         "employee_id": 1,
         "total_vacation_number": 15,
-        "used_vacation_number": 2
+        "used_vacation_number": 2,
+        "remain_vacatiob_number": 13
       }
     ],
   

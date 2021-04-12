@@ -18,21 +18,16 @@
 
         .vacation_list {
             width: 60%;
+            display: none;
+        }
+
+        .text {
+            display: none;
         }
     </style>
 
-    <script>
-        $(function(){
-            $("#button").on("click", function(){
-                $("#vacation_list").show();
-            })
-        })
-
-    </script>
-    <link href="./css/styles.css" rel="stylesheet">
 
 </head>
-
 
 <body>
     <div class="container-fluid">
@@ -43,8 +38,9 @@
             <br>
 
             <div class="group_category">
-                <select name="group_category" size="1">
+                <select name="group_category" size="1" onchange="viewOnChange();">
                     <group label="솔루션본부">
+                        <option value="솔루션본부">--솔루션본부--</option>
                         <option value="품질개선팀">품질개선팀</option>
                         <option value="품질지원팀">품질지원팀</option>
                         <option value="연구기획팀">연구기획팀</option>
@@ -59,6 +55,7 @@
 
                 <select name="group_category" size="1">
                     <group label="서비스개발본부">
+                        <option value="서비스개발본부">--서비스개발본부--</option>
                         <option value="서비스기획팀">서비스기획팀</option>
                         <option value="서비스개발팀">서비스개발팀</option>
                         <option value="서비스운영팀">서비스운영팀</option>
@@ -79,69 +76,74 @@
                 </select>
             </div>
 
-
-            <h3>연차 내역</h3>
-
-            <thead>
-                <tr>
-                    <th>번호</th>
-                    <th>이름</th>
-                    <th>직급</th>
-                    <th>총 연차일</th>
-                    <th>사용일</th>
-                    <th>잔여일</th>
-                    <th>상세 조회</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>양다슬</td>
-                    <td>사원</td>
-                    <td>15</td>
-                    <td>5</td>
-                    <td>10</td>
-                    <td>
-                        <button id="button">조회</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-
-
-        <div id="vacation_list" style="display: none;">
-            <br><br><br><br>
-
-            <h3>연차 사용 내역</h3>
-
-            <table id="vacation_list">
+            <div class="group_vacation">
+                <h3>연차 내역</h3>
 
                 <thead>
-
                     <tr>
-                        <th>번호</th>
-                        <th>휴가유형</th>
+
+                        <th>이름</th>
+                        <th>직위</th>
+                        <th>총 연차일</th>
                         <th>사용일</th>
-                        <th>종료일</th>
-                        <th>휴가기간</th>
-                        <th>상태</th>
-                        <th>반려사유</th>
+                        <th>잔여일</th>
+                        <th>상세 조회</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>연차</td>
-                        <td>2021-04-06</td>
-                        <td>2021-04-06</td>
-                        <td>1</td>
-                        <td>승인</td>
-                        <td>-</td>
+
+                        <td class="group-vacation" id="employee_name"></td>
+                        <td class="group-vacation" id="position_name"></td>
+                        <td class="group-vacation" id="total_vacation_number"></td>
+                        <td class="group-vacation" id="used_vacation_number"></td>
+                        <td class="group-vacation" id="remain_vacation_number"></td>
+                        <td>
+                            <button name="showBtn">조회</button>
+                        </td>
                     </tr>
                 </tbody>
-            </table>
-        </div>
+        </table>
+    </div>
+
+
+
+    <div class="vacation_list">
+        <br><br><br><br>
+
+        <h3>연차 사용 내역</h3>
+
+        <table id="table">
+
+            <thead>
+
+                <tr>
+                    <th>이름</th>
+                    <th>휴가유형</th>
+                    <td>작성일</td>
+                    <th>사용일</th>
+                    <th>종료일</th>
+                    <th>휴가기간</th>
+                    <th>상태</th>
+                    <th>반려사유</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>양다슬</td>
+                    <td>연차</td>
+                    <td>2021-04-01</td>
+                    <td>2021-04-06</td>
+                    <td>2021-04-06</td>
+                    <td>1</td>
+                    <td>승인</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
 </body>
 
 

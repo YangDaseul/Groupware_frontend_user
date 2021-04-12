@@ -1,59 +1,4 @@
-<head>
-    <script>
-        $(function(){
-            axios.get("http://localhost:3000/Employee_vacation")
-        })
-        .then(function(response){
-            let tb = $("<tbody/>");
-            console.log(response)
-            for(var i in response.data){
-                console.log(response.data)
 
-                let $employee_id = response.data[i].employee_id
-                let $total_vacation_number = response.data[i].total_vacation_number
-                let $used_vacation_number = response.data[i].used_vacation_number
-
-                var row = $("<tr/").append(
-                    '<td>' + $total_vacation_number + '</td>' + 
-                    '<td>' + $used_vacation_number + '</td>'
-                )
-                tb.append(row);
-            
-            }
-            $(".thead").after(tb);
-        })
-        .catch(function(error){
-            console.log(error);
-        })
-    
-        postScript = () => {
-        
-            axios.get("http://localhost:3000/Employee_vacation")
-                .then(response => {
-                    var inputs = document.getElementsByClassName("user-vacation");
-                    for(inputs in response.data.data){
-                        response.data.data[0].total_vacation_number;
-                        response.data.data[1].used_vacation_number;
-                    }
-                    new Array().forEach.call(inputs, (element) => {
-                        element.value = response.data.data[element.name];
-                    })
-
-
-                })
-                .catch(error => {
-
-                })
-        }
-
-        
-
-
-
-        window.onload = pageInitialLoadPage("./pages/userVacation.html", postScript);
-
-    </script>
-</head>
 <body>
     <div class="container-fluid">
         <table class="vacation_information">
@@ -74,12 +19,11 @@
             </thead>
 
             <tbody>
-            <tr>
-                <td align="center" , class="user-vacation" name="total_vacation_number"></td>
-                <td align="center" , class="user-vacation" name="used_vacation_number"></td>
-                <td align="center" , class="user-vacation" name="remain_vacation_number"></td>
-            </tr>
-        </tbody>
+                <td align="center", class="user-vacation" id="total_vacation_number"></td>
+                <td align="center", class="user-vacation" id="used_vacation_number"></td>
+                <td align="center", class="user-vacation" id="remain_vacation_number"></td>
+
+            </tbody>
         </table>
 
         <br>
@@ -99,26 +43,43 @@
                     <th>사용일</th>
                     <th>종료일</th>
                     <th>휴가기간</th>
+                    <th>휴가사유</th>
                     <th>상태</th>
-                    <th>반려사유</th>
                     <th>문서 조회</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td class="user-vacation-information" name="vacation_type_name"></td>
-                    <td class="user-vacation-information" name="vacation_start_date"></td>
-                    <td class="user-vacation-information" name="vacation_end_date"></td>
-                    <td class="user-vacation-information" name="vacation_period"></td>
-                    <td class="user-vacation-information" name="vacation_state"> </td>
-                    <td ></td>
+                    <td class="user-vacation-information-autoInc" id="vacation_list_number"></td>
+                    <td class="user-vacation-information" id="vacation_type_name"></td>
+                    <td class="user-vacation-information" id="vacation_start_date"></td>
+                    <td class="user-vacation-information" id="vacation_end_date"></td>
+                    <td class="user-vacation-information" id="vacation_period"></td>
+                    <td class="user-vacation-information" id="vacation_reason"></td>
+                    <td class="user-vacation-information" id="approval_state"> </td>
                     <td>
                         <a href="vacationDocumentInformation.html">
                             <input type="button" name="vacationDocumentInform" value="조회">
                         </a>
                     </td>
                 </tr>
+
+                <tr>
+                    <td class="user-vacation-information-autoInc" id="vacation_list_number"></td>
+                    <td class="user-vacation-information" id="vacation_type_name"></td>
+                    <td class="user-vacation-information" id="vacation_start_date"></td>
+                    <td class="user-vacation-information" id="vacation_end_date"></td>
+                    <td class="user-vacation-information" id="vacation_period"></td>
+                    <td class="user-vacation-information" id="vacation_reason"></td>
+                    <td class="user-vacation-information" id="approval_state"> </td>
+                    <td>
+                        <a href="vacationDocumentInformation.html">
+                            <input type="button" name="vacationDocumentInform" value="조회">
+                        </a>
+                    </td>
+                </tr>
+
+                
 
             </tbody>
         </table>
